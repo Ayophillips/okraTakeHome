@@ -1,0 +1,79 @@
+SECTION 1
+
+In this scenario, it is important to take a customer-centric approach while also managing the expectations of the sales team. To address the issues with Codak Ventures' integration, I would start by reviewing the documentation and code for the integration to identify the root cause of the errors. I would also work with the dev team to determine the severity of the issues and prioritize them based on their impact on the customer experience.
+
+Next, I would communicate with Codak Ventures to understand the specific issues they are facing and assure them that we are working to resolve them as quickly as possible. I would also provide regular updates on the progress of the investigation and resolution of the issues to keep them informed and show that we are actively working on a solution.
+
+To manage Peter's expectations, I would also communicate with him regularly to keep him updated on the status of the issues and our progress in resolving them. I would also provide him with a clear timeline for resolution, including any potential roadblocks or delays, to set reasonable expectations and prevent any surprises.
+
+Finally, to prevent churn, I would work with the dev team to prioritize the issues based on their impact on the customer experience and ensure that we are addressing them as quickly as possible. I would also offer alternative solutions or workarounds in the meantime to minimize the impact on the customer and maintain their satisfaction with our product.
+
+SECTION 2
+
+1. Hi Jesse! Thank you for reaching out to us. I'm sorry to hear that you're experiencing issues with retrieving the latest transactions using the https://api.okra.ng/v2/transactions/getById endpoint. Let's work together to troubleshoot the issue.
+
+Firstly, can you please confirm that you're passing the correct parameter, which is the transaction ID "id" of type string, when making the API call? Additionally, have you checked that the transaction ID corresponds to a transaction that occurred within the last week?
+
+If you've confirmed that the correct transaction ID is being passed, and it corresponds to a transaction that occurred within the last week, then the issue might be on our end. In that case, I'll need you to provide me with your API key, the exact transaction ID you're trying to retrieve, and any error messages you're receiving so I can investigate further.
+
+Please let me know if you have any other questions or if there's anything else I can do to help.
+
+2. Hi Mike! Thank you for reaching out to us. I'm glad to hear that you've successfully set up the Widget and connected the account. Let's work together to help you programmatically indicate if the connection was successful or if it threw an error.
+
+To indicate whether the connection was successful or threw an error, you can implement the Success and Error callback functions in your code. The onSuccess function is called after the successful linking of an account to your Okra Widget, while the onError function is called after an error occurs while linking an account to your Okra Widget.
+
+For example, you can define the onSuccess and onError functions in your code as follows:
+
+onSuccess = (json) => {
+console.log('handle success', json)
+// add any code you want to run after a successful connection here
+}
+
+onError = (json, error) => {
+console.log('handle error', error)
+// add any code you want to run after an error occurs here
+}
+
+Once you've defined these functions, you can call them in your code depending on the outcome of the connection attempt. If the connection is successful, you can call the onSuccess function and pass in the JSON response from the Widget. If an error occurs, you can call the onError function and pass in both the JSON response and the error message.
+
+I hope that helps! Please let me know if you have any other questions or if there's anything else I can do to help.
+
+3. Hello Blessing, thank you for your interest in testing Okra. We offer a free starter plan that is perfect for startups and testing out new products. With this plan, you can get your API keys and start testing instantly. You will have access to 100 free API calls, test in a sandbox environment, unlimited test credentials, developer support, widget design customization, and real-time Slack notifications. This plan is completely free, so you don't have to worry about any payments for your testing. Let me know if you have any further questions or concerns.
+
+SECTION 3
+
+Problem 1:
+
+To troubleshoot the issue, I first checked the response from the server to see if there are any error codes or messages that could provide more information about the issue.
+
+There were no clear error messages, I then check the implementation of the endpoint to ensure that it is correctly handling the provided payload and returning the expected data based on the information outlined in the documentation.
+
+It appeared that the issue with the customer's request was due to the fact that they are not providing a "limit" parameter with their payload. According to the documentation, the https://api.okra.ng/v2/products/auths endpoint accepts an optional "limit" parameter that allows the customer to specify the maximum number of paginated lists to return.
+
+I would recommend that the customer update their payload to include the "limit" parameter and provide a value for it.
+
+For example, they could modify their payload to look like this:
+{
+"page": 1,
+"limit": 2
+}
+
+This would limit the number of paginated lists returned to 2.
+
+Problem 2:
+
+To troubleshoot the issue, I first checked the response from the server to see if there are any error codes or messages that could provide more information about the issue.
+
+I received this error message indicating that two fields "to" and "from" are required.
+
+{
+"status": "error",
+"message": "to is required and from is required",
+"data": {}
+}
+
+I then check the implementation of the endpoint to ensure that it is correctly handling the provided payload and returning the expected data based on the information outlined in the documentation.
+
+Upon investigation, I discovered that the root cause of the issue was due to the customerfailing to provide the "to" and "from" parameter with their payload. According to the documentation, the https://api.okra.ng/v2/identity/getByDate endpoint accepts an optional "to" and "from" parameter that allows the retrieve identity profiles for all users in a given date range.
+
+I would recommend that the customer update their payload to include the "to" and "from" parameter and provide a value for it.
