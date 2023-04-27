@@ -74,6 +74,6 @@ I received this error message indicating that two fields "to" and "from" are req
 
 I then check the implementation of the endpoint to ensure that it is correctly handling the provided payload and returning the expected data based on the information outlined in the documentation.
 
-Upon investigation, I discovered that the root cause of the issue was due to the customerfailing to provide the "to" and "from" parameter with their payload. According to the documentation, the https://api.okra.ng/v2/identity/getByDate endpoint accepts an optional "to" and "from" parameter that allows the retrieve identity profiles for all users in a given date range.
+Upon investigation, I discovered that the root cause of the issue was due to the customerfailing to provide the "to" and "from" parameter with their payload. According to the documentation, the https://api.okra.ng/v2/identity/getByDate endpoint accepts a required "to" and "from" parameter that allows the retrieve identity profiles for all users in a given date range.
 
 I would recommend that the customer update their payload to include the "to" and "from" parameter and provide a value for it.
